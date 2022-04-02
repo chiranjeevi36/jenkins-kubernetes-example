@@ -4,11 +4,6 @@ pipeline {
         DOCKERHUB_CREDENTIALS=credentials('dockerhub')
     }
     stages {
-        stage('Build Maven') {
-            steps {
-                checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/chiranjeevi36/jenkins-kubernetes-example.git']]])
-            }
-        }
         stage('Build docker image') {
             steps {
               script {
