@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: nodejs-app
-        image: "chiru236/nodejsapp:1.0"
+        image: "chiru236/nodejsapp:2.0"
         ports:
           - containerPort: 3000
 ---
