@@ -7,14 +7,14 @@ pipeline {
         stage('Build docker image') {
             steps {
               script {
-                  sh 'docker build -t chiru236/nodejsapp:1.0 .'
+                  sh 'docker build -t chiru236/nodejsapp:2.0 .'
               }
             }
         }
         stage('Deploy Docker Image') {
             steps {
                 sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
-                sh 'docker push chiru236/nodejsapp:1.0'
+                sh 'docker push chiru236/nodejsapp:2.0'
             }
         }
         stage('Deploy App on k8s') {
